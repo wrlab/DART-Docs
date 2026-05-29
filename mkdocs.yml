@@ -1,23 +1,105 @@
-site_name: SkyMapper
-site_description: Commercial UAV-Smart Phone Integration for Low-Cost 3D Reconstruction
-site_author: Nojin Park, Ji Hyun Seo, Byounghyun Yoo
+site_name: SkyMapper Docs
+site_description: Build an autonomous indoor 3D scanning drone using a commercial UAV + smartphone payload.
+site_author: KIST SkyMapper Team
+
+# Keep directory-style URLs like /hardware/ like Voron/PX4 docs
+use_directory_urls: true
+
+repo_url: https://github.com/<YOUR_ORG>/<YOUR_REPO>
+repo_name: <YOUR_ORG>/<YOUR_REPO>
+edit_uri: edit/main/docs/
 
 theme:
   name: material
+  logo: assets/1024.png
+  favicon: assets/1024.png
   features:
-    # - navigation.tabs
     - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - content.action.edit
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.follow
   palette:
-    scheme: slate
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
 
-# 마크다운 확장 기능 (버튼 디자인 등을 위해 필요)
+plugins:
+  - search
+
 markdown_extensions:
+  - admonition
   - attr_list
   - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 nav:
   - Home: index.md
   - About: about.md
-  - Getting Started: guide/index_2.md
-  - Hardware Setup: guide/hardware.md
-  - Software Setup: guide/software.md
+
+  - Getting Started:
+      - getting-started/index.md
+      - Requirements: getting-started/requirements.md
+      - Demo Replay (No Drone): getting-started/demo-replay.md
+      - Quickstart (Full System): getting-started/quickstart.md
+      - First Scan Checklist: getting-started/first-scan.md
+
+  - Hardware:
+      - hardware/index.md
+      - BOM: hardware/bom.md
+      - Printing: hardware/printing.md
+      - Mount Assembly: hardware/mount-assembly.md
+      - Drone Integration: hardware/drone-integration.md
+      - Safety: hardware/safety.md
+
+  - Software:
+      - software/index.md
+      - Installation: software/installation.md
+      - Configuration: software/configuration.md
+      - Mobile App: software/mobile.md
+      - Controller: software/controller.md
+      - Web Viewer: software/viewer.md
+      - Sessions & Logs: software/sessions.md
+
+  - Operation:
+      - operation/run-scan.md
+      - Monitoring & Replay: operation/replay.md
+      - Data Export: operation/export.md
+
+  - Troubleshooting:
+      - troubleshooting/index.md
+      - Hardware: troubleshooting/hardware.md
+      - Network: troubleshooting/network.md
+      - Software: troubleshooting/software.md
+
+  - Reference:
+      - reference/architecture.md
+      - Network Ports: reference/network-ports.md
+      - File Formats: reference/file-formats.md
+      - Glossary: reference/glossary.md
+
+  - Contribute:
+      - contribute/index.md
+      - Documentation: contribute/docs.md
+      - Roadmap: contribute/roadmap.md
+      - License: contribute/license.md
+
+  - Legacy Pages:
+      - guide/index_2.md
+      - guide/hardware.md
+      - guide/software.md

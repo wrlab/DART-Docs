@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AirInspect: Autonomous indoor scanning with a drone-mounted iPhone, featuring real-time server-side sharing and multi-user viewing on the web via A-Frame.">
+
+  <meta name="keywords" content="AirInspect, indoor scanning, drone, iPhone, A-Frame, WebXR, SLAM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AirInspect: Low-Cost Indoor 3D Reconstruction and Targeted Web Inspection with Smartphone-Mounted UAVs</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Minimal, optional styles just for the News section -->
+  <style>
+    .news .media + .media { margin-top: 0.75rem; }
+    .news .date-badge { min-width: 6.5rem; }
+    @media (max-width: 480px) { .news .date-badge { min-width: 5.8rem; font-size: .9rem; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <!-- NEW: quick anchor to News section -->      <a class="navbar-item" href="#iphone-mount">iPhone Mount</a>
+      <a class="navbar-item" href="#news">News</a>
+      <a class="navbar-item" href="#contact">Contact</a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AirInspect: Low-Cost Indoor 3D Reconstruction and Targeted Web Inspection with Smartphone-Mounted UAVs</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Nojin Park</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Ji Hyun Seo</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Byounhyun Yoo</a><sup>1,3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Intelligence and Interaction Research Center, Korea Institute of Science and Technology</span>
+            <span class="author-block"><sup>2</sup>Department of Computer Science and Engineering, Korea University</span>
+            <span class="author-block"><sup>3</sup>AI-Robotics, KIST School, Korea National University of Science and Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/mgSrh6C3a68"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="publication-video" id="teaser-video">
+        <iframe
+          src="https://www.youtube.com/embed/mgSrh6C3a68?rel=0&amp;showinfo=0&amp;autoplay=0&amp;mute=1&amp;loop=1&amp;playlist=mgSrh6C3a68&amp;modestbranding=1&amp;playsinline=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        AirInspect Low-Cost Indoor 3D Reconstruction and Targeted Web Inspection with Smartphone-Mounted UAVs
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>AirInspect</strong> is a low-cost 3D reconstruction and remote inspection system built from
+            commercial UAVs and consumer smartphones (e.g., iPhones). By relying on off-the-shelf
+            hardware and existing software libraries, the system remains broadly compatible across
+            different UAV vendors with minimal customization.
+          </p>
+          <p>
+            In our workflow, a drone-mounted smartphone performs autonomous indoor scanning while a
+            server streams results to the web for real-time, multi-user viewing via A-Frame. The system
+            first produces a coarse 3D reconstruction to provide users a global overview of the space.
+            For practical inspection tasks, users can then request targeted remote monitoring to quickly
+            examine specific regions of interest—such as cracks or defects—through high-resolution 2D
+            imagery before triggering more time-consuming accurate reconstruction.
+          </p>
+          <p>
+            This dual-stage design emphasizes practicality, cost efficiency, and universality, making
+            AirInspect a promising solution for real-world indoor inspection and monitoring scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+
+<section class="section" id="iphone-mount">
+  <div class="container is-max-desktop">
+    <!-- iPhone Mount Section. -->
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">iPhone Mount</h2>
+        
+        <div class="columns is-multiline is-variable is-3">
+          <div class="column is-half">
+            <figure class="image is-4by3 holder-frame no-crop">
+              <img src="./static/images/onShape 1.png" alt="iPhone Mount Image 1 (assembled view)" loading="lazy">
+              <figcaption class="has-text-grey is-size-7 has-text-centered" style="margin-top:.25rem">
+                Assembled iPhone mount. <strong>Blue parts are rubber damping pads</strong> for vibration isolation.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image is-4by3 holder-frame no-crop">
+              <img src="./static/images/onShape 2.png" alt="iPhone Mount Image 2 (exploded view)" loading="lazy">
+              <figcaption class="has-text-grey is-size-7 has-text-centered" style="margin-top:.25rem">
+                Exploded view showing the layered structure and <strong>blue rubber pads</strong> at the frame interface and phone grips.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image is-4by3 holder-frame">
+              <img src="./static/images/hardware Model 2.png" alt="iPhone Mount Image 3" loading="lazy">
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure class="image is-4by3 holder-frame">
+              <img src="./static/images/hardware Model 1.png" alt="iPhone Mount Image 4" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="content" style="margin-top:1rem">
+          <h3 class="title is-4">iPhone Mount Design</h3>
+          <p>
+            We designed a lightweight iPhone mount for UAVs with three goals:
+            <strong>vibration isolation</strong>, <strong>unobstructed camera FoV</strong>, and
+            <strong>preserved center of gravity</strong>. Rubber <strong>damping pads (shown in blue in the CAD renders)</strong>
+            are placed between the mount and the airframe and on the phone grips to decouple propeller-induced vibrations from
+            the camera and IMU, improving real-time localization and 3D reconstruction. The mount keeps the phone offset from
+            frame elements to avoid occlusions, and its position is tuned to align the combined mass with the vehicle’s centerline.
+            The parts are <strong>3D-printed in PLA (~50 g)</strong> and tested in flight, showing stable fixation and reduced drift error.
+          </p>
+          <ul>
+            <li><strong>Vibration isolation:</strong> Blue rubber pads at frame interface and phone grips attenuate high-frequency jitter.</li>
+            <li><strong>Camera visibility:</strong> Offset/angle placement prevents frame occlusion in the camera’s field of view.</li>
+            <li><strong>Balance:</strong> Mount location preserves CG near the airframe axis for stable flight.</li>
+            <li><strong>Build:</strong> PLA 3D-printed (~50 g), validated in flight with improved localization stability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Holder Section. -->
+
+  </div>
+</section>
+
+<!-- ===================== News section (below iPhone Mount) ===================== -->
+<section class="section" id="news">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">News</h2>
+    <div class="box news">
+      <!-- Newest first; Project website was done first chronologically (oldest date). -->
+
+      <article class="media">
+        <figure class="media-left date-badge">
+          <p class="tag is-dark is-medium"><time datetime="2025-11-12">2025-11-12</time></p>
+        </figure>
+        <div class="media-content">
+          <p>
+            <strong>Teaser video uploaded</strong> — Short overview on YouTube. <a href="https://youtu.be/mgSrh6C3a68" target="_blank" rel="noopener">Open video</a>.
+          </p>
+        </div>
+      </article>
+
+      <hr class="my-3">
+
+      <article class="media">
+        <figure class="media-left date-badge">
+          <p class="tag is-dark is-medium"><time datetime="2025-11-10">2025-11-10</time></p>
+        </figure>
+        <div class="media-content">
+          <p>
+            <strong>iPhone Mount uploaded</strong> — Added assembly and exploded views in the <a href="#iphone-mount">iPhone Mount</a> section with vibration-damping details.
+          </p>
+        </div>
+      </article>
+
+      <hr class="my-3">
+
+      <article class="media">
+        <figure class="media-left date-badge">
+          <p class="tag is-dark is-medium"><time datetime="2025-11-08">2025-11-08</time></p>
+        </figure>
+        <div class="media-content">
+          <p>
+            <strong>Project website launched</strong> — Initial public page for AirInspect is live. Watch the <a href="#teaser-video">teaser</a> and check the <a href="#iphone-mount">iPhone Mount</a> preview.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- =================== /News section ===================== -->
+
+<!-- ===================== Contact section ===================== -->
+<section class="section" id="contact">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Contact</h2>
+    <div class="content">
+      <p>
+        <strong>AirInspect</strong> is a open-source project from the
+        <a href="https://wrl.kist.re.kr/" target="_blank" rel="noopener">Webizing Research Lab (WRL)</a> at KIST,
+        supervised by <strong>Prof. Byounghyun Yoo</strong>.
+      </p>
+      <p>
+        We study autonomous indoor scanning with smartphone-mounted UAVs, practical 3D reconstruction pipelines, and web-based multi-user inspection.
+        It is maintained by the WRL team, see the <a href="https://wrl.kist.re.kr/people/members" target="_blank" rel="noopener">team member list</a>.
+      </p>
+      <p>
+        We welcome suggestions and collaboration from academia and industry—for example integration with facility workflows, reproducible datasets, deployment pilots, or media inquiries.
+        If you are interested in using or contributing to AirInspect, please <a href="https://wrl.kist.re.kr/contact-us" target="_blank" rel="noopener">contact us</a>.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- =================== /Contact section ===================== -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

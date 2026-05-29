@@ -1,0 +1,28 @@
+site_name: Project Documentation
+repo_url: https://github.com/She456/SkyMapper.github.io
+repo_name: She456/SkyMapper.github.io
+
+# 중요: 문서 결과물을 /docs/ 하위로 만들기
+site_dir: site/docs
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Quickstart: quickstart.md
+  - Software:
+      - Overview: software/overview.md
+      - iOS Scanner: software/ios_scanner.md
+      - iPad Controller: software/ipad_controller.md
+      - ROS Mapper (TBD): software/ros_mapper.md
+      - WXR Server (TBD): software/wxr_server.md
+  - Hardware:
+      - Overview: hardware/overview.md
+  - Benchmarks: benchmarks.md
+  - Cite & License: cite.md
