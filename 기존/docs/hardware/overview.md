@@ -1,2 +1,0 @@
-# Hardware Overview
-(Write later)

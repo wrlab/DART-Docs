@@ -1,2 +1,0 @@
-# Cite & License
-(Write later)
