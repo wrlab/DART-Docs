@@ -27,7 +27,7 @@ Follow the steps in order. If something is unsafe or unstable, **stop immediatel
 ### Network
 - [ ] All devices are on the same Wi-Fi SSID
 - [ ] The server IP is reachable from the phone and tablet
-- [ ] OS firewall allows the SkyMapper ports (temporarily disable for testing if needed)
+- [ ] OS firewall allows the DART ports (temporarily disable for testing if needed)
 
 ### Marker
 - [ ] QR marker placed flat, visible, and well lit

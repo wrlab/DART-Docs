@@ -1,6 +1,6 @@
 # Data Export
 
-SkyMapper outputs are useful for downstream tasks:
+DART outputs are useful for downstream tasks:
 
 - facility documentation
 - inspection annotations

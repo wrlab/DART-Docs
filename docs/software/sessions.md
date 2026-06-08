@@ -1,6 +1,6 @@
 # Sessions & Logs
 
-This page documents what SkyMapper saves and what to attach to bug reports.
+This page documents what DART saves and what to attach to bug reports.
 
 ---
 

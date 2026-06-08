@@ -1,6 +1,6 @@
-site_name: SkyMapper Docs
+site_name: DART Docs
 site_description: Build an autonomous indoor 3D scanning drone using a commercial UAV + smartphone payload.
-site_author: KIST SkyMapper Team
+site_author: KIST DART Team
 
 # Keep directory-style URLs like /hardware/ like Voron/PX4 docs
 use_directory_urls: true

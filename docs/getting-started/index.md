@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to **SkyMapper**.
+Welcome to **DART**.
 
 **Goal:** help you reach **first successful scan** quickly and safely.
 

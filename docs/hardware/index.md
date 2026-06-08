@@ -1,6 +1,6 @@
 # Hardware Overview
 
-Hardware for SkyMapper is designed to be:
+Hardware for DART is designed to be:
 - reproducible
 - lightweight
 - buildable with a basic FDM printer

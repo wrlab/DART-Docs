@@ -1,6 +1,6 @@
 # Demo Replay (No Drone)
 
-This page is a **zero-hardware preview** of what SkyMapper produces.
+This page is a **zero-hardware preview** of what DART produces.
 
 You can use it to:
 - understand the workflow

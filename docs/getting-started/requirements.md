@@ -2,7 +2,7 @@
 
 This page lists the **baseline setup** the docs assume, plus the minimum requirements to get your first scan running.
 
-If you are building SkyMapper for the first time, follow this page “as-is” before customizing.
+If you are building DART for the first time, follow this page “as-is” before customizing.
 
 ---
 
@@ -75,7 +75,7 @@ Most “it doesn’t connect” issues are network issues.
 
 ## Fiducial marker
 
-SkyMapper uses a **QR-code fiducial marker** in the scan area to initialize the coordinate frame.
+DART uses a **QR-code fiducial marker** in the scan area to initialize the coordinate frame.
 
 **Download**
 - [Download the marker image](../assets/qr_marker.png)

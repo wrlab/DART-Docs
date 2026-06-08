@@ -1,6 +1,6 @@
 # Software Overview
 
-SkyMapper software consists of multiple components that work together:
+DART software consists of multiple components that work together:
 
 - **Mobile app** (phone): tracking + RGB-D capture
 - **Compute node** (server): mapping + planning + archiving

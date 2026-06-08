@@ -1,6 +1,6 @@
 # Contributing
 
-SkyMapper is docs-first: improvements to documentation are valuable.
+DART is docs-first: improvements to documentation are valuable.
 
 ---
 

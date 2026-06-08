@@ -2,7 +2,7 @@
 
 This guide is optimized for **first success**.
 
-SkyMapper has multiple components, so the recommended order is:
+DART has multiple components, so the recommended order is:
 
 1) Bring up the **server + viewer**
 2) Connect the **phone** and confirm streaming
@@ -31,7 +31,7 @@ Make sure the following are ready:
 ## Step 1 — Start the server + viewer
 
 **Action**
-- Start the SkyMapper server on your compute node (PC/mini-PC)
+- Start the DART server on your compute node (PC/mini-PC)
 - Open the viewer in a browser
 
 **Expected**

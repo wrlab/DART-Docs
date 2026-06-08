@@ -64,8 +64,8 @@ hide:
   </video>
 
   <div class="hero-content">
-    <img src="assets/1024.png" alt="SkyMapper Logo">
-    <h1>SkyMapper</h1>
+    <img src="assets/1024.png" alt="DART Logo">
+    <h1>DART</h1>
     <p><b>Open-source indoor 3D scanning drone</b><br/>
     Build with off-the-shelf UAV + smartphone payload, and monitor/replay scans in a web viewer.</p>
 
@@ -73,13 +73,13 @@ hide:
       <a href="getting-started/" class="md-button md-button--primary" style="font-size: 1.05rem; padding: 10px 18px;">🚀 Start Here</a>
       <a href="hardware/" class="md-button" style="font-size: 1.05rem; padding: 10px 18px;">🧩 Build Hardware</a>
       <a href="software/" class="md-button" style="font-size: 1.05rem; padding: 10px 18px;">💻 Setup Software</a>
-      <a href="https://github.com/wrlab/SkyMapper" target="_blank" class="md-button". style="font-size: 1.05rem; padding: 10px 18px;">🌐 GitHub</a>
+      <a href="https://github.com/wrlab/DART" target="_blank" class="md-button". style="font-size: 1.05rem; padding: 10px 18px;">🌐 GitHub</a>
     </div>
   </div>
 </div>
 
 !!! warning "Safety first"
-    SkyMapper involves operating drones indoors. Always follow local laws and safety rules.
+    DART involves operating drones indoors. Always follow local laws and safety rules.
     Keep a safety perimeter and never fly near people.
 
 ---

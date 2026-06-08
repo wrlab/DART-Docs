@@ -1,6 +1,6 @@
 # Configuration
 
-SkyMapper usually needs configuration in three places:
+DART usually needs configuration in three places:
 
 1) **Server / viewer**
 2) **Mobile app**
