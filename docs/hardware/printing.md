@@ -2,6 +2,10 @@
 
 This page covers print settings and practical tips for mount parts.
 
+!!! note "CAD file"
+    Download the mount model: [drone_mount.stp](../assets/cad/drone_mount.stp){ download } (STEP, 2.4 MB).
+    See [Mount Assembly → CAD files](mount-assembly.md#cad-files) for details.
+
 ---
 
 ## Material

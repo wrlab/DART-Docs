@@ -22,6 +22,19 @@ Use this page as your step-by-step build checklist.
 
 ---
 
+## CAD files
+
+Download the mount model and print it before assembly (see [Printing](printing.md) for settings).
+
+| File | Format | Size | Use |
+|------|--------|------|-----|
+| [drone_mount.stp](../assets/cad/drone_mount.stp){ download } | STEP (AP214) | 2.4 MB | Open in Fusion 360, SolidWorks, FreeCAD, Onshape to edit or export STL |
+
+!!! tip
+    Most slicers cannot open STEP directly. Export to STL/3MF from your CAD tool first.
+
+---
+
 ## Assembly steps
 
 1. **Dry-fit**
